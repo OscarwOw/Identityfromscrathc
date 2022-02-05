@@ -1,0 +1,43 @@
+﻿@page
+@model Identityfromscrathc.Pages.Account.LoginModel
+@{
+}
+
+<div class="container border" style="padding:20px">
+    <form method="post">
+        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="credential.Username"></label>
+            </div>
+            <div class="col-5">
+                <input type="text" asp-for="credential.Username" />
+            </div>
+            <span class="text-danger" asp-validation-for="credential.Username"></span>
+
+        </div>
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="credential.Password"></label>
+            </div>
+            <div class="col-5">
+                <input type="password" asp-for="credential.Password" />
+            </div>
+            <span class="text-danger" asp-validation-for="credential.Password"></span>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-2">
+                <input type="submit" class="btn-primary btn-primary" value="Login" 
+            </div>
+            
+            
+
+        </div>
+    </form>
+
+
+
+
+
+</div> 
