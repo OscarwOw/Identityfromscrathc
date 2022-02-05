@@ -29,7 +29,7 @@ namespace Identityfromscrathc.Pages.Account
                 var identity = new ClaimsIdentity(claims, "MyCookieAuth");
                 ClaimsPrincipal claimsPrincipal = new ClaimsPrincipal(identity);
 
-                await HttpContext.SignInAsync("MyCookieAuth", claimsPrincipal);
+                await HttpContext.SignInAsync("MyCookieAuth", claimsPrincipal); 
 
 
                 return RedirectToPage("/Index");
