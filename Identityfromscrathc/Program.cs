@@ -8,7 +8,13 @@ builder.Services.AddAuthentication("MyCookieAuth").AddCookie("MyCookieAuth", opt
     options.Cookie.Name = "MyCookieAuth";  // koláèiky ktoré mi zabezpeèia prihlásenie :)
     options.AccessDeniedPath = "/Account/AccessDenied";
 });
-builder.Services.AddAuthorization(options => { options.AddPolicy("MustBelongToHRDepartment", policy => policy.RequireClaim("Department", "HR")); });
+builder.Services.AddAuthorization(options => {
+      options.AddPolicy("MustBelongToHRDepartment", 
+          policy => policy.RequireClaim("Department", "HR"));
+    options.AddPolicy("AdminOnly",
+        policy => policy.RequireClaim("admin"));
+
+});
 
 var app = builder.Build();
 
